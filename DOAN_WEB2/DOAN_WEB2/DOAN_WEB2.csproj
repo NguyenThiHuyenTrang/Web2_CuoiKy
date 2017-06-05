@@ -407,8 +407,8 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\NhaSanXuat\Index.cshtml" />
     <Content Include="Views\PhanLoai\Index.cshtml" />
-    <Content Include="Views\Shared\NhaSanXuat.cshtml" />
-    <Content Include="Views\Shared\PhanLoai.cshtml" />
+    <Content Include="Views\Shared\_NhaSanXuat.cshtml" />
+    <Content Include="Views\Shared\_PhanLoai.cshtml" />
     <Content Include="Views\Shop\Details.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
