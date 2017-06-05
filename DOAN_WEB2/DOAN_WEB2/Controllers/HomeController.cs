@@ -1,16 +1,24 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WEB2_GK_demo.Models.BUS;
 
-namespace DOAN_WEB2.Controllers
+namespace WEB2_GK_demo.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(int PagedList = 1, int size = 3)
         {
-            return View();
+            var sql = MobileShopBus.DanhSach().ToPagedList(PagedList, size);
+            return View(sql);
+        }
+        public ActionResult Details(String id)
+        {
+            var sql = MobileShopBus.ChiTiet(id);
+            return View(sql);
         }
 
         public ActionResult About()
