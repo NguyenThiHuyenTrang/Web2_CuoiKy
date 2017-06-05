@@ -6,4 +6,5 @@
 + Nhà sản xuất = Phân trang nhà sản xuất  
 1461489 : Nguyễn Trọng Nghĩa
 - Add Layout người dùng + Danh sách sản phẩm + Phân trang cho danh sách sản phẩm  
-1461774 : Đinh Văn Vinh : 
+-Phân loại sản phẩm
+1461774 : Đinh Văn Vinh :  
