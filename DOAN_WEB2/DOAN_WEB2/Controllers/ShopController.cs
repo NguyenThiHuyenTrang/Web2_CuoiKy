@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DOAN_WEB2.Models.BUS;
-using WEB2_GK_demo.Models.BUS;
+
 
 namespace DOAN_WEB2.Controllers
 {

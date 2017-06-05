@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WEB2_GK_demo.Models.BUS
+namespace DOAN_WEB2.Models.BUS
 {
     public class MobileShopBus
     {

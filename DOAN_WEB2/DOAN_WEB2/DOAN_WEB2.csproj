@@ -382,7 +382,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -406,10 +405,14 @@
     <Content Include="Views\Shared\_MainLayout.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\PhanLoai\Index.cshtml" />
     <Content Include="Views\NhaSanXuat\Index.cshtml" />
-    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\PhanLoai\Index.cshtml" />
+    <Content Include="Views\Shared\NhaSanXuat.cshtml" />
+    <Content Include="Views\Shared\PhanLoai.cshtml" />
     <Content Include="Views\Shop\Details.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WEB2_GK_demo.Models.BUS;
+using DOAN_WEB2.Models.BUS;
 
-namespace WEB2_GK_demo.Controllers
+namespace DOAN_WEB2.Controllers
 {
     public class HomeController : Controller
     {

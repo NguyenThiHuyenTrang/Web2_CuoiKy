@@ -1,3 +1,5 @@
-1461682 : Nguy?n Th? Huy?n Trang: Add ng�?i d�ng 
-1461489 : Nguy?n Tr?ng Ngh?a : Add Layout Ng�?i d�ng 
-1461774 : �inh V�n Vinh : 
+﻿1461682 : Nguyễn Thị Huyền Trang 
+- Tạo git hub + Add thành viên + Chi tiết sản phẩm + Phân trang cho chi tiết sản phẩm  
+1461489 : Nguyễn Trọng Nghĩa
+- Add Layout người dùng + Danh sách sản phẩm + Phân trang cho danh sách sản phẩm  
+1461774 : Đinh Văn Vinh : 
