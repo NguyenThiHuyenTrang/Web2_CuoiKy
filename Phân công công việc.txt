@@ -3,8 +3,13 @@
 + Add thành viên 
 + Chi tiết sản phẩm 
 + Phân trang cho chi tiết sản phẩm 
-+ Nhà sản xuất = Phân trang nhà sản xuất  
++ Nhà sản xuất 
++ Phân trang nhà sản xuất
+  
 1461489 : Nguyễn Trọng Nghĩa
-- Add Layout người dùng + Danh sách sản phẩm + Phân trang cho danh sách sản phẩm  
--Phân loại sản phẩm
++ Add Layout người dùng 
++ Danh sách sản phẩm 
++ Phân trang cho danh sách sản phẩm  
++ Phân loại sản phẩm
+
 1461774 : Đinh Văn Vinh :  
