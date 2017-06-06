@@ -30,6 +30,7 @@
                         <div class="item">
                             <img src="~/css/images/amazon.png" alt="Second slide">
                             <!-- Static Header -->
+                            <div class="header-text hidden-xs">
                                 <div class="col-md-12 text-center">
                                 </div>
                             </div><!-- /header-text -->
@@ -75,7 +76,7 @@
                         <div class="col-lg-4 col-md-4 col-xs-12">
                             <div class="product">
                                 <div class="image"><a href="@Url.Action("Details","Shop", new { id = @item.MaSP})"><img style="max-width:220px;max-height:220px" src="~/css/images/@item.Hinh1" /></a></div>
-                                
+
                                 <div class="caption">
                                     <div class="name"><h3><a href="@Url.Action("Details","Shop", new { id = @item.MaSP})">@item.TenSP</a></h3></div>
                                     <div class="price"><ins>@string.Format("{0:#0,0 VNĐ}", @item.Gia)</ins></div>
