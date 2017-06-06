@@ -1,0 +1,33 @@
+﻿
+@model IEnumerable<MobileShopConnection.BinhLuan>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<h2> Bình Luận</h2>
+@if (User.Identity.IsAuthenticated)
+{
+    using (Html.BeginForm("Create", "BinhLuan", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("MaSanPham", (string)ViewBag.MaSP)
+        @Html.TextArea("NoiDung")
+
+        <input type="submit" value="Đăng" />
+    }
+}
+else
+{
+
+    <div>Vui lòng <a href="/Account/Login">đăng nhập</a></div>
+}
+<div id="comments">
+    @foreach (var item in Model)
+    {
+        <div class="comment">
+            <div class="comment-name">@item.TenTaiKhoan</div>
+            <div class="comment-conten">@item.NoiDung</div>
+        </div>
+    }
+</div>
