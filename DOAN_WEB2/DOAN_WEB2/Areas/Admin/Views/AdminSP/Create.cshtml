@@ -1,0 +1,94 @@
+﻿
+@model MobileShopConnection.SanPham
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_MainPlayoutAdmin.cshtml";
+}
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #4CAF50;
+        }
+
+    div {
+        border-radius: 5px;
+        background-color: #808080;
+    }
+</style>
+<body>
+
+    <h3>Thêm  Sản Pham</h3>
+
+    <div>
+        @using (Html.BeginForm("Create", "AdminSP", FormMethod.Post))
+        {
+            <label for="fname">Mã Sản Phẩm</label>
+            <input type="text" id="fname" name="MaSP" placeholder="Nhập mã nhà sản xuất.." required>
+
+            <label for="lname">Tên Sản Xuất</label>
+            <input type="text" id="lname" name="TenSP" placeholder="Nhập tên nhà sản xuất" required>
+            <div class="form-group">
+                @Html.LabelFor(model => model.MoTa, "Mô tả", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control tinymce" } })
+                    @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <label for="fname">Mã Loại Sản Phẩm</label>
+            <input type="text" id="fname" name="MaLoaiSP" placeholder="Nhập mã nhà sản xuất.." required>
+
+            <label for="fname">Mã nhà sản xuất</label>
+            <input type="text" id="fname" name="MaNhaSX" placeholder="Nhập mã nhà sản xuất.." required>
+
+            <label for="fname">CammeraTruoc</label>
+            <input type="text" id="fname" name="CameraTruoc" placeholder="Nhập mã nhà sản xuất.." required>
+            <label for="fname">CammeraSau</label>
+            <input type="text" id="fname" name="CameraSau" placeholder="Nhập mã nhà sản xuất.." required>
+            <label for="fname">Gía Sản Phẩm</label>
+            <input type="text" id="fname" name="Gia" placeholder="Nhập mã nhà sản xuất..">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.HinhChinh, "Hình ảnh", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    <input type="file" name="imagefile" />
+                    @Html.ValidationMessageFor(model => model.HinhChinh, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <label for="country">TinhTrang</label>
+                <select id="country" name="TinhTrang" required>
+                    <option value="0" selected>Chưa Khóa</option>
+                    <option value="1">Đã Khóa</option>
+
+                </select>
+
+
+                <input type="submit" value="Submit">
+
+        }
+
+
+    </div>
+
+</body>
