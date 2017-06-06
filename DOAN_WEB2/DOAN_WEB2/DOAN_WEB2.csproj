@@ -1404,6 +1404,7 @@
     <Content Include="Areas\Admincss\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon.ttf" />
     <Content Include="Areas\Admincss\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon.woff" />
     <Content Include="Areas\Admincss\vendors\tinymce\js\tinymce\skins\lightgray\fonts\readme.md" />
+    <Content Include="Areas\Admin\Views\Shared\_MainPLayoutAdmin.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

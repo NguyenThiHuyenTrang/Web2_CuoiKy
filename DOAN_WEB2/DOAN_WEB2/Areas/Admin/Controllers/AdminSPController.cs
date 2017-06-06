@@ -59,7 +59,7 @@ namespace DOAN_WEB2.Areas.Admin.Controllers
                 {
                     string fileName = Guid.NewGuid().ToString();
 
-                    string fullPathWithFileName = "/css/img/products/" + fileName + ".jpg";
+                    string fullPathWithFileName = "~/css/img/products/" + fileName + ".jpg";
                     hpf.SaveAs(Server.MapPath(fullPathWithFileName));
                     sp.HinhChinh = fullPathWithFileName;
                 }

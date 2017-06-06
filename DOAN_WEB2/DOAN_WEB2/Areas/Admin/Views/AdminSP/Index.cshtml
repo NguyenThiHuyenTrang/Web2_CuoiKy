@@ -45,8 +45,6 @@
             <th>CameraTruoc</th>
             <th>Mã Loại Sản Phẩm</th>
             <th>Bộ nhớ trong</th>
-            @*<th>Cấu hình</th>
-                <th>Dung lượng bin</th>*@
             <th>Tình trạng</th>
 
             <th colspan="2" text-align center>
@@ -72,10 +70,7 @@
                 <td>@item.CameraTruoc</td>
                 <td>@item.MaLoaiSP</td>
                 <td>@item.BoNhoTrong</td>
-                @*<td>@item.CauHinh</td>
-                    <td>@item.DungLuongBin</td>*@
                 <td>@item.TinhTrang</td>
-
                 <td><a href="@Url.Action("Edit","AdminSP",new {id =@item.MaSP })"> <img src="~/css/images/edit.png" /></a></td>
                 <td><a href="@Url.Action("Remove","AdminSP",new {id =@item.MaSP})"><img src="~/css/images/delete.png" /></a></td>
 
