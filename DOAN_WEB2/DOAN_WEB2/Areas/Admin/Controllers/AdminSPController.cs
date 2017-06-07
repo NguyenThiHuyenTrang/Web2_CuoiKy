@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DOAN_WEB2.Models.BUS;
+using DOAN_WEB2.Areas.Admin.Models;
 
 namespace DOAN_WEB2.Areas.Admin.Controllers
 {
@@ -16,8 +17,18 @@ namespace DOAN_WEB2.Areas.Admin.Controllers
         // GET: Admin/AdminSP
         public ActionResult Index()
         {
+            if (TempData["Success"] != null)
+            {
+                ViewBag.Success = TempData["Success"].ToString();
+            }
+            if (TempData["Error"] != null)
+            {
+                ViewBag.Error = TempData["Error"].ToString();
+            }
 
-            return View(MobileShopBus.DanhSachSP());
+
+
+            return View(AdminSPBus.DanhSachSanPham());
         }
 
         // GET: Admin/AdminSP/Details/5
@@ -29,53 +40,54 @@ namespace DOAN_WEB2.Areas.Admin.Controllers
         // GET: Admin/AdminSP/Create
         public ActionResult Create()
         {
+            //ViewBag.MaLoaiSanPham = new SelectList(AdminSPBus.LDS(), "MaLoaiSanPham", "TenLoaiSP");
             return View();
+            
         }
 
         // POST: Admin/AdminSP/Create
         [HttpPost, ValidateInput(false)]
         public ActionResult Create(SanPham sp)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add insert logic here
-        //        MobileShopBus.ThemSP(sp);
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
         {
-            {
-                // TODO: Add insert logic here
-                //Hàm thêm
-                if (HttpContext.Request.Files.Count > 0) { }
-
-                var hpf = HttpContext.Request.Files[0];
-                if (hpf.ContentLength > 0)
-                {
-                    string fileName = Guid.NewGuid().ToString();
-
-                    string fullPathWithFileName = "~/css/img/products/" + fileName + ".jpg";
-                    hpf.SaveAs(Server.MapPath(fullPathWithFileName));
-                    sp.HinhChinh = fullPathWithFileName;
-                }
-            }
-            MobileShopBus.ThemSP(sp);
-            return RedirectToAction("Index");
-            //try
             //{
             //    // TODO: Add insert logic here
-            //    SanPhamBus.ThemSP(sp);
-            //    return RedirectToAction("Index");
+            //    //Hàm thêm
+            //    if (HttpContext.Request.Files.Count > 0) { }
+
+            //    var hpf = HttpContext.Request.Files[0];
+            //    if (hpf.ContentLength > 0)
+            //    {
+            //        string fileName = Guid.NewGuid().ToString();
+
+            //        string fullPathWithFileName = "~/css/" + fileName + ".jpg";
+            //        hpf.SaveAs(Server.MapPath(fullPathWithFileName));
+            //        sp.HinhChinh = fullPathWithFileName;
+            //    }
             //}
-            //catch
-            //{
-            //    return View();
-            //}
+            //MobileShopBus.ThemSP(sp);
+            //return RedirectToAction("Index");
+            try
+            {
+                if (HttpContext.Request.Files.Count > 0)
+                {
+                    var hpf = HttpContext.Request.Files[0];
+                    if (hpf.ContentLength > 0)
+                    {
+                        string fileName = Guid.NewGuid().ToString();
+                        string fullPathWithFileName = "~/Admincss/images/" + fileName + ".jpg";
+                        hpf.SaveAs(Server.MapPath(fullPathWithFileName));
+                        sp.HinhChinh = fullPathWithFileName;
+                    }
+                }
+                // TODO: Add insert logic here
+               // sp.TinhTrang = 0;
+                MobileShopBus.ThemSP(sp);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Admin/AdminSP/Edit/5
