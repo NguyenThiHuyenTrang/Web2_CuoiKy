@@ -1,0 +1,44 @@
+﻿
+@model  IEnumerable<MobileShopConnection.v_GioHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>
+    Index
+</h2>
+<div id="page-content" class="home-page">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+
+            <div>
+                @using (Html.BeginForm("CapNhat", "GioHang", FormMethod.Post))
+                {
+                    @Html.Hidden("id", item.Id)
+                    <div class="col-md-8">@item.TenSP</div>
+                    <div class="col-md-8">@item.Gia</div>
+
+
+
+                    @*<div class="col-md-8">@item.MaTaiKhoan</div>*@
+                    <div class="col-md-2"><input type="number" name="soLuong" value="@item.SoLuong" min="0"/> </div>
+                  
+
+                  
+                    <div class="col-md-2"><input type="submit" value="Cập Nhật" /></div>
+                }
+            </div>
+        }
+            
+        @using (Html.BeginForm("ThanhToan", "GioHang", FormMethod.Post))
+        {
+            <div>
+            <input  type= "submit" value="Thanh Toán"/>
+            </div>
+        }
+
+  </div>
+</div>

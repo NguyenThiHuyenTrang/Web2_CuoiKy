@@ -209,6 +209,7 @@
     <Compile Include="Areas\Admin\Models\AdminSPBus.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BinhLuanController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NhaSanXuatController.cs" />
@@ -219,6 +220,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BUS\BinhLuanBUS.cs" />
+    <Compile Include="Models\BUS\GioHangBUS.cs" />
     <Compile Include="Models\BUS\MobileShopBus.cs" />
     <Compile Include="Models\BUS\NhaSanXuatBus.cs" />
     <Compile Include="Models\BUS\PhanLoaiBus.cs" />
@@ -1467,10 +1469,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\BinhLuan\Index.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\AdminSPBus\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

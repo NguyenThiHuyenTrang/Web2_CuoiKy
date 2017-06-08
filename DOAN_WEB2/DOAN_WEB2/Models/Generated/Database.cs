@@ -8,7 +8,7 @@
 //     Provider:               `System.Data.SqlClient`
 //     Connection String:      `Data Source=TRONGNGHIA\SQLEXPRESS;Initial Catalog=MobileShop;Integrated Security=True`
 //     Schema:                 ``
-//     Include Views:          `False`
+//     Include Views:          `True`
 
 using System;
 using System.Collections.Generic;
@@ -197,7 +197,10 @@ namespace MobileShopConnection
 		[Column] public int Id { get; set; }
 		[Column] public string MaTaiKhoan { get; set; }
 		[Column] public string MaSP { get; set; }
-		[Column] public int SoLuong { get; set; }
+		[Column] public string TenSP { get; set; }
+		[Column] public int? Gia { get; set; }
+		[Column] public int? SoLuong { get; set; }
+		[Column] public int? TongTien { get; set; }
 	}
     
 	[TableName("dbo.LoaiSP")]
@@ -277,5 +280,20 @@ namespace MobileShopConnection
 		[Column] public int? LoaiTaiKhoan { get; set; }
 		[Column] public int? Xoa { get; set; }
 		[Column] public string DiaChi { get; set; }
+	}
+    
+	[TableName("dbo.v_GioHang")]
+	[ExplicitColumns]
+    public partial class v_GioHang : MobileShopConnectionDB.Record<v_GioHang>  
+    {
+		[Column] public int Id { get; set; }
+		[Column] public string MaTaiKhoan { get; set; }
+		[Column] public string MaSP { get; set; }
+		[Column] public int? SoLuong { get; set; }
+		[Column] public int? TongTien { get; set; }
+		[Column] public string TenSP { get; set; }
+		[Column] public int? Gia { get; set; }
+		[Column] public string Expr1 { get; set; }
+		[Column] public int? Expr2 { get; set; }
 	}
 }
