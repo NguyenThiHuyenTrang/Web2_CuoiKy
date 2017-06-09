@@ -7,7 +7,7 @@ using Microsoft.AspNet.Identity;
 using DOAN_WEB2.Models.BUS;
 using MobileShopConnection;
 
-namespace WEB2_GK_demo.Controllers
+namespace DOAN_WEB2.Controllers
 {
     public class GioHangController : Controller
     {

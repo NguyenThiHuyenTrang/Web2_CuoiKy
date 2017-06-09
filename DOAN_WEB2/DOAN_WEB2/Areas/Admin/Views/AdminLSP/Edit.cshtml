@@ -1,0 +1,67 @@
+﻿
+@model MobileShopConnection.LoaiSP
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    input[type=text], select {
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 80%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #4CAF50;
+        }
+
+    div {
+        border-radius: 5px;
+        background-color: #808080;
+    }
+</style>
+<body>
+
+    <h3>Sửa Loại Sản Phẩm </h3>
+
+    <div>
+        @using (Html.BeginForm("Edit", "AdminLSP", FormMethod.Post))
+        {
+            <label for="fname">Mã Loại Sản Phẩm</label>
+            <input type="text" id="fname" name="MaLoaiSP" placeholder="Nhập mã loại sản phẩm ..." required value="@Model.MaLoaiSP" readonly>
+
+            <label for="lname">Tên Loại Sản Phẩm</label>
+            <input type="text" id="lname" name="TenLoaiSP" placeholder="Nhập tên loại sản phẩm ..." required value="@Model.TenLoaiSP">
+
+            <label for="country">Country</label>
+            <select id="country" name="TinhTrang" required>
+                <option value="0">Chưa Khóa</option>
+                <option value="1">Đã Khóa</option>
+
+            </select>
+
+
+                <input type="submit" value="Submit">
+
+        }
+
+
+    </div>
+
+</body>

@@ -28,18 +28,23 @@ namespace DOAN_WEB2.Models.BUS
             var sql = new MobileShopConnectionDB();
             return sql.Query<LoaiSP>("select * from LoaiSP ");
         }
+       
         public static void ThemLSP(LoaiSP LSP)
         {
             var sql = new MobileShopConnectionDB();
             sql.Insert(LSP);
         }
-        //EDIT
-        public static IEnumerable<LoaiSP> EditLSP(String id)
+        
+        public static LoaiSP EditLSP(String id)
         {
             var sql = new MobileShopConnectionDB();
-            return sql.Query<LoaiSP>("select * from SanPham where MaLoaiSP = '" + id + "'");
+            return sql.SingleOrDefault<LoaiSP>("select * from LoaiSP  where MaLoaiSP = '" + id + "'");
         }
-
+        public static void UpdateLSP(String id, LoaiSP LSP)
+        {
+            var sql = new MobileShopConnectionDB();
+            sql.Update(LSP, id);
+        }
 
     }
 }

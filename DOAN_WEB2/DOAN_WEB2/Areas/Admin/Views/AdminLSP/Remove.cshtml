@@ -1,4 +1,4 @@
-﻿@model MobileShopConnection.NhaSanXuat
+﻿@model MobileShopConnection.LoaiSP
 @{
     ViewBag.Title = "Remove";
     Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
@@ -36,32 +36,32 @@
 </style>
 <body>
 
-    <h3>Xóa Nhà Sản Xuất</h3>
+    <h3>Xóa Loại Sản Phẩm </h3>
 
     <div>
-        @using (Html.BeginForm("Remove", "AdminNSX", FormMethod.Post))
+        @using (Html.BeginForm("Remove", "AdminLSP", FormMethod.Post))
         {
-            <label for="fname">Mã Nhà Sản Xuất</label>
-            <input type="text" id="fname" name="MaNhaSX"  required value="@Model.MaNhaSX" readonly>
+            <label for="fname">Mã Loại Sản Phẩm </label>
+            <input type="text" id="fname" name="MaLoaiSP" required value="@Model.MaLoaiSP" readonly>
 
-            <label for="lname">Tên Nhà Sản Xuất</label>
-            <input type="text" id="lname" name="TenNhaSX"  required value="@Model.TenNhaSX" readonly>
+            <label for="lname">Tên Loại Sản Phẩm </label>
+            <input type="text" id="lname" name="TenLoaiSP"  required value="@Model.TenLoaiSP" readonly>
 
             <label for="country">Tình trạng</label>
-                <select id="country" name="TinhTrang" required>
-                    @if (Model.TinhTrang == "1")
-                    {
+            <select id="country" name="TinhTrang" required>
+                @if (Model.TinhTrang == "1")
+                {
 
-                        <option value="1" selected>Đã Khóa</option>
-                    }
-                    else
-                    {
+                    <option value="1" selected>Đã Khóa</option>
+                }
+                else
+                {
 
-                        <option value="0" selected>Chưa Khóa</option>
+                    <option value="0" selected>Chưa Khóa</option>
 
 
-                    }
-                </select>
+                }
+            </select>
 
 
                 <input type="submit" value="Xóa Thành công">
