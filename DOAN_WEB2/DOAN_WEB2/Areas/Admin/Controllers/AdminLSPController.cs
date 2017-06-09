@@ -70,37 +70,16 @@ namespace DOAN_WEB2.Areas.Admin.Controllers
             }
         }
 
-        //xóa tạm thời
-        //public ActionResult Remove(String id)
-        //{
-        //    return View(PhanLoaiBus.EditLSP(id));
-        //}
-        //[HttpPost]
-        //public ActionResult Remove(String id, LoaiSP LSP)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add delete logic here
-        //        LSP.TinhTrang = "1";
-        //        PhanLoaiBus.UpdateLSP(id, LSP);
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
 
         // GET: Admin/AdminLSP/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(String id)
         {
             return View();
         }
 
         // POST: Admin/AdminLSP/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(String id, FormCollection collection)
         {
             try
             {
@@ -116,7 +95,7 @@ namespace DOAN_WEB2.Areas.Admin.Controllers
 
 
         // POST: Admin/LoaiSanPhamAdmin/xoatamthoi
-        public ActionResult Remove(String id)
+        public ActionResult XoaTam(String id)
         {
             return View(PhanLoaiBus.EditLSP(id));
         }
@@ -124,7 +103,7 @@ namespace DOAN_WEB2.Areas.Admin.Controllers
         // POST: Admin/LoaiSanPhamAdmin/Deletexoatam
 
         [HttpPost]
-        public ActionResult Remove(String id, LoaiSP LSP)
+        public ActionResult XoaTam(String id, LoaiSP LSP)
         {
             try
             {

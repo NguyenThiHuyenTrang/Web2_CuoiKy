@@ -1408,13 +1408,11 @@
     <Content Include="Areas\Admin\Views\AdminNSX\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNSX\Create.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNSX\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminNSX\Remove.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNSX\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\AdminLSP\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminLSP\Create.cshtml" />
     <Content Include="Areas\Admin\Views\AdminLSP\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminLSP\Remove.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminLSP\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminLSP\XoaTam.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

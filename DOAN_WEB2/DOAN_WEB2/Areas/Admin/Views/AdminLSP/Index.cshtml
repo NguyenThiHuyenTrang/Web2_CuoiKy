@@ -49,7 +49,7 @@
                 <td>@item.TinhTrang</td>
 
                 <td> <a href="@Url.Action("Edit","AdminLSP",new {id =@item.MaLoaiSP })"><img src="~/css/images/edit.png" /></a></td>
-                <td> <a href="@Url.Action("Delete", "AdminLSP",new {id =@item.MaLoaiSP })"> <img src="~/css/images/delete.png" /></a></td>
+                <td> <a href="@Url.Action("XoaTam", "AdminLSP",new {id =@item.MaLoaiSP })"> <img src="~/css/images/delete.png" /></a></td>
             </tr>
         }
     </table>
