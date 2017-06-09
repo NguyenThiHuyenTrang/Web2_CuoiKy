@@ -1,0 +1,74 @@
+﻿@model MobileShopConnection.NhaSanXuat
+@{
+    ViewBag.Title = "Remove";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+<style>
+    input[type=text], select {
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 80%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #4CAF50;
+        }
+
+    div {
+        border-radius: 5px;
+        background-color: #808080;
+    }
+</style>
+<body>
+
+    <h3>Xóa Nhà Sản Xuất</h3>
+
+    <div>
+        @using (Html.BeginForm("Remove", "AdminNSX", FormMethod.Post))
+        {
+            <label for="fname">Mã Nhà Sản Xuất</label>
+            <input type="text" id="fname" name="MaNhaSX" placeholder="Nhập mã nhà sản xuất.." required value="@Model.MaNhaSX" readonly>
+
+            <label for="lname">Tên Nhà Sản Xuất</label>
+            <input type="text" id="lname" name="TenNhaSX" placeholder="Nhập tên nhà sản xuất" required value="@Model.TenNhaSX" readonly>
+
+            <label for="country">Tình trạng</label>
+                <select id="country" name="TinhTrang" required>
+                    @if (Model.TinhTrang == "1")
+                    {
+
+                        <option value="1" selected>Đã Khóa</option>
+                    }
+                    else
+                    {
+
+                        <option value="0" selected>Chưa Khóa</option>
+
+
+                    }
+                </select>
+
+
+                <input type="submit" value="Xóa Thành công">
+
+        }
+
+
+    </div>
+
+</body>
