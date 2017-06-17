@@ -21,8 +21,8 @@ namespace DOAN_WEB2.Models.BUS
             return sql.Query<SanPham>("select * from SanPham where MaLoaiSP = '" + id + "'");
         }
 
-        //admin
-        //them
+        ////admin
+        ////them
         public static IEnumerable<LoaiSP> DanhSanhLSPAdmin()
         {
             var sql = new MobileShopConnectionDB();
@@ -34,10 +34,10 @@ namespace DOAN_WEB2.Models.BUS
             sql.Insert(LSP);
         }
         //EDIT
-        public static IEnumerable<LoaiSP> EditLSP(String id)
+        public static LoaiSP EditLSP(String id)
         {
             var sql = new MobileShopConnectionDB();
-            return sql.Query<LoaiSP>("select * from SanPham where MaLoaiSP = '" + id + "'");
+            return sql.SingleOrDefault<LoaiSP>("select * from LoaiSP  where MaLoaiSP = '" + id + "'");
         }
 
         public static void UpdateLSP(String id, LoaiSP LSP)

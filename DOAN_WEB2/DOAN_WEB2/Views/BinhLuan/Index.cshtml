@@ -1,5 +1,4 @@
-﻿
-@model IEnumerable<MobileShopConnection.BinhLuan>
+﻿@model IEnumerable<MobileShopConnection.BinhLuan>
 @{
     ViewBag.Title = "Index";
     Layout = null;
@@ -8,13 +7,19 @@
 <h2> Bình Luận</h2>
 @if (User.Identity.IsAuthenticated)
 {
-   <textarea id="comment-content"></textarea>
-   <input value="Đăng" type ="button" onclick="PostComment()"/>
+    using (Html.BeginForm("Create", "BinhLuan", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("MaSanPham", (string)ViewBag.MaSP)
+        @Html.TextArea("NoiDung")
+
+        <input type="submit" value="Đăng" />
+    }
 }
 else
 {
 
-    <div>Vui lòng <a href="/Account/Login?ReturnUrl=@Request.Url.AbsoluteUri">đăng nhập</a></div>
+    <div>Vui lòng <a href="/Account/Login">đăng nhập</a></div>
 }
 <div id="comments">
     @foreach (var item in Model)
