@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
+using PagedList;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,10 +20,10 @@ namespace DOAN_WEB2.Controllers
             return RedirectToAction("Details", "Shop", new { Id = MaSanPham });
         }
 
-        public ActionResult Index(string MaSP)
+        public ActionResult Index(string MaSP, int PagedList = 1, int size = 6)
         {
             ViewBag.MaSP = MaSP;
-            return View(BinhLuanBUS.DanhSach(MaSP));
+            return View(BinhLuanBUS.DanhSach(MaSP).ToPagedList(PagedList, size));
         }
     }
 }

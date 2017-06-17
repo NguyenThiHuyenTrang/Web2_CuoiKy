@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using DOAN_WEB2.Models.BUS;
 
-namespace DOAN_WEB2.Controllers
+namespace DOAN_WEB2.Controllersz
 {
     public class PhanLoaiController : Controller
     {

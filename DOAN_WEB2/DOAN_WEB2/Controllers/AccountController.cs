@@ -9,10 +9,13 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using DOAN_WEB2.Models;
+using BotDetect.Web.Mvc;
 
 namespace DOAN_WEB2.Controllers
 {
     [Authorize]
+   
+
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -66,6 +69,7 @@ namespace DOAN_WEB2.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+       
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
@@ -86,7 +90,7 @@ namespace DOAN_WEB2.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Kiểm tra lại tài khoản hoặc mật khẩu.");
                     return View(model);
             }
         }
@@ -137,6 +141,7 @@ namespace DOAN_WEB2.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
+
         public ActionResult Register()
         {
             return View();
@@ -145,13 +150,14 @@ namespace DOAN_WEB2.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
+        [CaptchaValidation("CaptchaCode", "registerCaptcha", "Incorrect CAPTCHA code!")]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PhoneNumber=model.PhoneNumber };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
