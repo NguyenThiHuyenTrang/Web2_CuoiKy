@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_MainPlayoutAdmin.cshtml";
 }
 
 <style>
@@ -42,27 +42,30 @@
     <div>
         @using (Html.BeginForm("Create", "AdminLSP", FormMethod.Post))
         {
+            <div>
             <label for="fname">Mã Loại Sản Phẩm</label>
             <input type="text" id="fname" name="MaLoaiSP" placeholder="Nhập mã loại sản phẩm ..." required>
+            </div>
+            <div>
+                <label for="lname">Tên Nhà Sản Xuất</label>
+                <input type="text" id="lname" name="TenLoaiSP" placeholder="Nhập tên loại sản phẩm ..." required>
+            </div>
+            <div>
+                <label for="country">Tình Trạng</label>
+                <select id="country" name="TinhTrang" placeholder="Nhập tên nhà sản xuất" required>
+                    <option value="0" selected>Chưa Khóa</option>
+                    <option value="1">Đã Khóa</option>
 
-            <label for="lname">Tên Nhà Sản Xuất</label>
-            <input type="text" id="lname" name="TenLoaiSP" placeholder="Nhập tên loại sản phẩm ..." required>
-
-            <label for="country">Tình Trạng</label>
-            <select id="country" name="TinhTrang" placeholder="Nhập tên nhà sản xuất" required>
-                <option value="0" selected>Chưa Khóa</option>
-                <option value="1">Đã Khóa</option>
-
-            </select>
-
+                </select>
+            </div>
 
                 <input type="submit" value="Submit">
 
-        
-        }
+
+                }
 
 
-    </div>
+            </div>
 
 </body>
 

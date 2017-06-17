@@ -4,21 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace DOAN_WEB2.Models.BUS
+namespace DOAN_WEB2.Areas.Admin.Models
 {
-    public class NhaSanXuatBus
+    public class AdminNSXBus
     {
-        public static IEnumerable<NhaSanXuat> DanhSach()
-        {
-            var sql = new MobileShopConnectionDB();
-            return sql.Query<NhaSanXuat>("select *  from NhaSanXuat where TinhTrang = 0");
-
-        }
-        public static IEnumerable<SanPham> ChiTietNSX(String id)
-        {
-            var sql = new MobileShopConnectionDB();
-            return sql.Query<SanPham>("select * from SanPham where MaNhaSX = '" + id + "'");
-        }
         //admin
         //them
         public static IEnumerable<NhaSanXuat> DanhSanhNSXAdmin()

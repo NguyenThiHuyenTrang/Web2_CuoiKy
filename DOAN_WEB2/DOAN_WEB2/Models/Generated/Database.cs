@@ -185,7 +185,7 @@ namespace MobileShopConnection
 		[Column] public string MaTaiKhoan { get; set; }
 		[Column] public string TenTaiKhoan { get; set; }
 		[Column] public string NoiDung { get; set; }
-		[Column] public string TinhTrang { get; set; }
+		[Column] public int TinhTrang { get; set; }
 		[Column] public DateTime Ngay { get; set; }
 	}
     
@@ -210,7 +210,7 @@ namespace MobileShopConnection
     {
 		[Column] public string MaLoaiSP { get; set; }
 		[Column] public string TenLoaiSP { get; set; }
-		[Column] public string TinhTrang { get; set; }
+		[Column] public int? TinhTrang { get; set; }
 	}
     
 	[TableName("dbo.NhaSanXuat")]
@@ -220,7 +220,7 @@ namespace MobileShopConnection
     {
 		[Column] public string MaNhaSX { get; set; }
 		[Column] public string TenNhaSX { get; set; }
-		[Column] public string TinhTrang { get; set; }
+		[Column] public int? TinhTrang { get; set; }
 	}
     
 	[TableName("dbo.SanPham")]
@@ -250,7 +250,7 @@ namespace MobileShopConnection
 		[Column] public string Hinh4 { get; set; }
 		[Column] public int? Gia { get; set; }
 		[Column] public int? SoLuongBan { get; set; }
-		[Column] public string TinhTrang { get; set; }
+		[Column] public int? TinhTrang { get; set; }
 		[Column] public int? LuotXem { get; set; }
 		[Column] public string ThemSP { get; set; }
 		[Column] public string MoTa { get; set; }

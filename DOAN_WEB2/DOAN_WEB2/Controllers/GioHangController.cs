@@ -7,54 +7,86 @@ using Microsoft.AspNet.Identity;
 using DOAN_WEB2.Models.BUS;
 using MobileShopConnection;
 
-namespace DOAN_WEB2.Controllers
+namespace WEB2_GK_demo.Controllers
 {
+    [Authorize]
     public class GioHangController : Controller
     {
         // GET: GioHang
-        [Authorize]
+        
         public ActionResult Index()
         {
+            ViewBag.TongTien = GioHangBUS.TongTien(User.Identity.GetUserId());
             return View(GioHangBUS.DanhSach(User.Identity.GetUserId()));
         }
 
         [HttpPost]
 
-        public ActionResult Them(String maSanPham )
+        public ActionResult Them(string masanpham, string tensanpham, int gia, int soluong)
         {
+            try
+            {
 
-            GioHangBUS.Them(maSanPham, User.Identity.GetUserId());
-            return RedirectToAction("Index");
+                GioHangBUS.Them(masanpham, User.Identity.GetUserId(),gia,soluong,tensanpham);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return RedirectToAction("../Shop/Index");
+            }
         }
         [HttpPost]
 
-        public ActionResult CapNhat(int id, int soLuong)
+        public ActionResult CapNhat(string masanpham, string tensanpham, int gia, int soluong)
         {
+            try
+            {
 
-            GioHangBUS.CapNhat(id, soLuong);
-            return RedirectToAction("Index");
+                GioHangBUS.CapNhat(masanpham, User.Identity.GetUserId(), gia, soluong, tensanpham);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return RedirectToAction("../Shop/Index");
+            }
         }
-        [HttpPost]
-        public ActionResult ThanhToan()
+
+        [HttpGet]
+
+        public ActionResult Xoa(string masanpham)
         {
+            try
+            {
 
-            IEnumerable<v_GioHang> dsCTGH = GioHangBUS.DanhSach(User.Identity.GetUserId());
-            //int TongTien = 0;
-            //foreach (var item in dsCTGH)
-            //{
-            //    TongTien += item.SoLuong * item.Gia;
-            //}
-
-            //tạo đơn hàng với MaTaiKhoan va tong tien
-
-            //chuyen cac dong trong gio hang sang don hang
-            //foreach(var item in dsCTGH)
-            //{
-            //    ChiTietDonHangBUS.Them(...)
-            //}
-            //xoa cac dong trong gio hang cua user 
-
-            return RedirectToAction("Index");
+                GioHangBUS.Xoa(masanpham, User.Identity.GetUserId());
+                return RedirectToAction("index");
+            }
+            catch
+            {
+                return RedirectToAction("../Shop/index");
+            }
         }
+        //[HttpPost]
+        //public ActionResult ThanhToan()
+        //{
+
+        //    IEnumerable<v_GioHang> dsCTGH = GioHangBUS.DanhSach(User.Identity.GetUserId());
+        //    //int TongTien = 0;
+        //    //foreach (var item in dsCTGH)
+        //    //{
+        //    //    TongTien += item.SoLuong * item.Gia;
+        //    //}
+
+        //    //tạo đơn hàng với MaTaiKhoan va tong tien
+
+        //    //chuyen cac dong trong gio hang sang don hang
+        //    //foreach(var item in dsCTGH)
+        //    //{
+        //    //    ChiTietDonHangBUS.Them(...)
+        //    //}
+        //    //xoa cac dong trong gio hang cua user 
+
+        //    return RedirectToAction("Index");
+        //}
     }
 }

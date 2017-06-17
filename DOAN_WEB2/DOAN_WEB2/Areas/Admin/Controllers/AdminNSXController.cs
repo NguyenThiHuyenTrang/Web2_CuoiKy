@@ -82,7 +82,7 @@ namespace DOAN_WEB2.Areas.Admin.Controllers
             try
             {
                 // TODO: Add delete logic here
-                NSX.TinhTrang = "1";
+                NSX.TinhTrang = 1;
                 NhaSanXuatBus.UpdateNSX(id, NSX);
                 return RedirectToAction("Index");
             }

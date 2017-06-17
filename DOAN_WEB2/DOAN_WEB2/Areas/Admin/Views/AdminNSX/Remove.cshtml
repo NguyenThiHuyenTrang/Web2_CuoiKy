@@ -1,10 +1,8 @@
-﻿
-@model MobileShopConnection.NhaSanXuat
+﻿@model MobileShopConnection.NhaSanXuat
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Remove";
     Layout = "~/Areas/Admin/Views/Shared/_MainPlayoutAdmin.cshtml";
 }
-
 <style>
     input[type=text], select {
         width: 80%;
@@ -38,30 +36,42 @@
 </style>
 <body>
 
-    <h3>Sửa Nhà Sản Xuất</h3>
+    <h3>Thêm Nhà Sản Xuất</h3>
 
     <div>
-        @using (Html.BeginForm("Edit", "AdminNSX", FormMethod.Post))
-        {
+    @using (Html.BeginForm("Remove", "AdminNSX", FormMethod.Post))
+    {
+        <div>
             <label for="fname">Mã Nhà Sản Xuất</label>
             <input type="text" id="fname" name="MaNhaSX" placeholder="Nhập mã nhà sản xuất.." required value="@Model.MaNhaSX" readonly>
-
+        </div>
+        <div>
             <label for="lname">Tên Nhà Sản Xuất</label>
-            <input type="text" id="lname" name="TenNhaSX" placeholder="Nhập tên nhà sản xuất" required value="@Model.TenNhaSX">
-
-            <label for="country">Country</label>
+            <input type="text" id="lname" name="TenNhaSX" placeholder="Nhập tên nhà sản xuất" required value="@Model.TenNhaSX" readonly>
+        </div>
+        <div>
+            <label for="country">Tình trạng</label>
             <select id="country" name="TinhTrang" required>
-                <option value="0">Chưa Khóa</option>
-                <option value="1">Đã Khóa</option>
+                @if (Model.TinhTrang == 1)
+                {
 
+                    <option value="1" selected>Đã Khóa</option>
+                }
+                else
+                {
+
+                    <option value="0" selected>Chưa Khóa</option>
+
+
+                }
             </select>
 
+        </div>
+            <input type="submit" value="Xóa Thành công">
 
-                <input type="submit" value="Submit">
-
-        }
+            }
 
 
-    </div>
+        </div>
 
 </body>

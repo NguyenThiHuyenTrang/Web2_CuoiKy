@@ -1,8 +1,8 @@
 ﻿@model MobileShopConnection.LoaiSP
 @{
     ViewBag.Title = "XoaTam";
-    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
-
+    Layout = "~/Areas/Admin/Views/Shared/_MainPlayoutAdmin.cshtml";
+}
 }
 <style>
     input[type=text], select {
@@ -40,17 +40,20 @@
     <h3>Xóa Nhà Sản Xuất</h3>
 
     <div>
-        @using (Html.BeginForm("XoaTam", "AdminLSP", FormMethod.Post))
-        {
+    @using (Html.BeginForm("XoaTam", "AdminLSP", FormMethod.Post))
+    {
+        <div>
             <label for="fname">Mã Nhà Sản Xuất</label>
             <input type="text" id="fname" name="MaLoaiSP" required value="@Model.MaLoaiSP" readonly>
-
+        </div>
+        <div>
             <label for="lname">Tên Nhà Sản Xuất</label>
             <input type="text" id="lname" name="TenLoaiSP" required value="@Model.TenLoaiSP" readonly>
-
+        </div>
+        <div>
             <label for="country">Tình trạng</label>
             <select id="country" name="TinhTrang" required>
-                @if (Model.TinhTrang == "1")
+                @if (Model.TinhTrang == 1)
                 {
 
                     <option value="1" selected>Đã Khóa</option>
@@ -64,13 +67,13 @@
                 }
             </select>
 
+        </div>
+            <input type="submit" value="Xóa Thành công">
 
-                <input type="submit" value="Xóa Thành công">
-
-        }
+            }
 
 
-    </div>
+        </div>
 
 </body>
 

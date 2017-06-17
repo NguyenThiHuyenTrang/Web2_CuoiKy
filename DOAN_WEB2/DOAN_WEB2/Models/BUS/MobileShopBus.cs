@@ -31,5 +31,10 @@ namespace DOAN_WEB2.Models.BUS
             sql.Insert(sp);
 
         }
+        public static SanPham LoadAvartaImg(String id)
+        {
+            var sql = new MobileShopConnectionDB();
+            return sql.SingleOrDefault<SanPham>("select * from SanPham where MaSP = @0", id);
+        }
     }
 }

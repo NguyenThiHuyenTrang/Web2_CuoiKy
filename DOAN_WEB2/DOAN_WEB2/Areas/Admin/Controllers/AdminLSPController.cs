@@ -12,6 +12,7 @@ namespace DOAN_WEB2.Areas.Admin.Controllers
 
     public class AdminLSPController : Controller
     {
+      
         // GET: Admin/AdminLSP
         public ActionResult Index()
         {
@@ -108,7 +109,7 @@ namespace DOAN_WEB2.Areas.Admin.Controllers
             try
             {
                 // TODO: Add delete logic here
-                LSP.TinhTrang = "1";
+                LSP.TinhTrang = 1;
                 PhanLoaiBus.UpdateLSP(id, LSP);
                 return RedirectToAction("Index");
             }

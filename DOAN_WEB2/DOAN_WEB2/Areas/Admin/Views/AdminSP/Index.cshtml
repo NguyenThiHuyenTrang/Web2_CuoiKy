@@ -1,0 +1,87 @@
+﻿@model  IEnumerable<MobileShopConnection.SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_MainPlayoutAdmin.cshtml";
+}
+
+<style>
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 80%;
+    }
+
+    th, td {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+<body>
+
+    <h2>Admin Nhà sản xuất</h2>
+
+    <table>
+        <tr>
+            <th>Mã Sản Phẩm</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Mô Tả</th>
+            <th>Ma Nha San Xuat</th>
+            <th>Gía</th>
+            <th>Hệ Điều Hành</th>
+            <th>Hình Anh</th>
+            <th>Màn Hình</th>
+            <th>RAM</th>
+            <th>CameraSau</th>
+            <th>CameraTruoc</th>
+            <th>Mã Loại Sản Phẩm</th>
+            <th>Bộ nhớ trong</th>
+            <th>Tình trạng</th>
+
+            <th colspan="2" text-align center>
+                <a href="@Url.Action("Create","AdminSP")"> <img src="~/css/images/add.png" /></a>
+            </th>
+        </tr>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.MaSP</td>
+                <td>@item.TenSP</td>
+                <td>@Html.Raw(item.MoTa)</td>
+                <td>@item.MaNhaSX</td>
+                <td>@item.Gia</td>
+                <td>@item.HeDieuHanh</td>
+
+                <td>
+                    <img src="~/css/images/@item.HinhChinh" style="width:70px;height:90px;" />
+                </td>
+                <td>@item.ManHinh</td>
+                <td>@item.RAM</td>
+                <td>@item.CameraSau</td>
+                <td>@item.CameraTruoc</td>
+                <td>@item.MaLoaiSP</td>
+                <td>@item.BoNhoTrong</td>
+                <td>@item.TinhTrang</td>
+                <td><a href="@Url.Action("Edit","AdminSP",new {id =@item.MaSP })"> <img src="~/css/images/edit.png" /></a></td>
+                <td><a href="@Url.Action("Remove","AdminSP",new {id =@item.MaSP})"><img src="~/css/images/delete.png" /></a></td>
+
+            </tr>
+        }
+    </table>
+</body>
+
+
+
+
+
+
+

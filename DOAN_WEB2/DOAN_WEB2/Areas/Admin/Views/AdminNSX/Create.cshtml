@@ -1,11 +1,12 @@
-﻿
+﻿@model MobileShopConnection.NhaSanXuat
 @{
+    
     ViewBag.Title = "Create";
-    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_MainPlayoutAdmin.cshtml";
 }
 <style>
     input[type=text], select {
-        width: 80%;
+        width: 60%;
         padding: 12px 20px;
         margin: 8px 0;
         display: inline-block;
@@ -41,13 +42,16 @@
     <div>
         @using (Html.BeginForm("Create", "AdminNSX", FormMethod.Post))
         {
-            <label for="fname">Mã Nhà Sản Xuất</label>
-            <input type="text" id="fname" name="MaNhaSX" placeholder="Nhập mã nhà sản xuất.." required>
-
-            <label for="lname">Tên Nhà Sản Xuất</label>
+            <div>
+                <label for="fname">Mã Nhà Sản Xuất</label>
+                <input type="text" id="fname" name="MaNhaSX" placeholder="Nhập mã nhà sản xuất.." required>
+            </div>
+            <div>
+                <label for="lname">Tên Nhà Sản Xuất</label>
                 <input type="text" id="lname" name="TenNhaSX" placeholder="Nhập tên nhà sản xuất" required>
-          
-            <label for="country">Tình Trạng</label>
+            </div>
+            <div>
+                <label for="country">Tình Trạng SP</label>
                 <select id="country" name="TinhTrang" placeholder="Nhập tên nhà sản xuất" required>
                     <option value="0" selected>Chưa Khóa</option>
                     <option value="1">Đã Khóa</option>
@@ -56,10 +60,10 @@
 
 
                 <input type="submit" value="Submit">
-
+            </div>
         }
 
 
-    </div>
+            </div>
 
 </body>

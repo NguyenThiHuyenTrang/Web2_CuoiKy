@@ -205,8 +205,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminLSPController.cs" />
-    <Compile Include="Areas\Admin\Controllers\MainAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminNSXController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminSPController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MainAdminController.cs" />
+    <Compile Include="Areas\Admin\Models\AdminLSPBus.cs" />
+    <Compile Include="Areas\Admin\Models\AdminNSXBus.cs" />
+    <Compile Include="Areas\Admin\Models\AdminSPBus.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BinhLuanController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
@@ -1315,6 +1319,10 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminSP\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminSP\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminSP\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MainAdmin\Index.cshtml" />
     <Content Include="Areas\Admincss\LICENSE" />
     <Content Include="Areas\Admincss\README.md" />
     <Content Include="Areas\Admincss\bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -1403,12 +1411,12 @@
     <Content Include="Areas\Admincss\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon.ttf" />
     <Content Include="Areas\Admincss\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon.woff" />
     <Content Include="Areas\Admincss\vendors\tinymce\js\tinymce\skins\lightgray\fonts\readme.md" />
-    <Content Include="Areas\Admin\Views\Shared\_MainLayoutAdmin.cshtml" />
-    <Content Include="Areas\Admin\Views\MainAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_MainPLayoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNSX\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNSX\Create.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNSX\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\AdminNSX\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminNSX\Remove.cshtml" />
     <Content Include="Areas\Admin\Views\AdminLSP\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminLSP\Create.cshtml" />
     <Content Include="Areas\Admin\Views\AdminLSP\Edit.cshtml" />
@@ -1475,10 +1483,11 @@
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\BinhLuan\Index.cshtml" />
     <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\Shared\_GioHang.cshtml" />
+    <Content Include="Views\Shared\_AvartaDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

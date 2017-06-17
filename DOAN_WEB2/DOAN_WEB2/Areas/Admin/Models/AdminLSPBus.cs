@@ -4,23 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace DOAN_WEB2.Models.BUS
+namespace DOAN_WEB2.Areas.Admin.Models
 {
-    public class PhanLoaiBus
+    public class AdminLSPBus
     {
-        public static IEnumerable<LoaiSP> DanhSach()
-        {
-            var sql = new MobileShopConnectionDB();
-            return sql.Query<LoaiSP>("select * from LoaiSP where TinhTrang = 0");
-
-        }
-
-        public static IEnumerable<SanPham> ChiTietPL(String id)
-        {
-            var sql = new MobileShopConnectionDB();
-            return sql.Query<SanPham>("select * from SanPham where MaLoaiSP = '" + id + "'");
-        }
-
         //admin
         //them
         public static IEnumerable<LoaiSP> DanhSanhLSPAdmin()
@@ -28,18 +15,18 @@ namespace DOAN_WEB2.Models.BUS
             var sql = new MobileShopConnectionDB();
             return sql.Query<LoaiSP>("select * from LoaiSP ");
         }
+
         public static void ThemLSP(LoaiSP LSP)
         {
             var sql = new MobileShopConnectionDB();
             sql.Insert(LSP);
         }
-        //EDIT
-        public static IEnumerable<LoaiSP> EditLSP(String id)
+
+        public static LoaiSP EditLSP(String id)
         {
             var sql = new MobileShopConnectionDB();
-            return sql.Query<LoaiSP>("select * from SanPham where MaLoaiSP = '" + id + "'");
+            return sql.SingleOrDefault<LoaiSP>("select * from LoaiSP  where MaLoaiSP = '" + id + "'");
         }
-
         public static void UpdateLSP(String id, LoaiSP LSP)
         {
             var sql = new MobileShopConnectionDB();
