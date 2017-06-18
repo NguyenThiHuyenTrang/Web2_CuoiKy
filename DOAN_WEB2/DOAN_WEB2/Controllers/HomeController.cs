@@ -12,7 +12,7 @@ namespace DOAN_WEB2.Controllers
     {
         public ActionResult Index(int PagedList = 1, int size = 3)
         {
-            var sql = MobileShopBus.DanhSach().ToPagedList(PagedList, size);
+            var sql = MobileShopBus.DanhSachTOP10().ToPagedList(PagedList, size);
             return View(sql);
         }
         public ActionResult Details(String id)

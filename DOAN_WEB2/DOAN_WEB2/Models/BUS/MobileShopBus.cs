@@ -14,6 +14,14 @@ namespace DOAN_WEB2.Models.BUS
             return sql.Query<SanPham>("select* from SanPham where TinhTrang = 0");
 
         }
+
+        public static IEnumerable<SanPham> DanhSachTOP10()
+        {
+            var sql = new MobileShopConnectionDB();
+            return sql.Query<SanPham>(" SELECT TOP 10  * FROM SanPham WHERE TinhTrang = 0 ORDER BY SoLuongBan DESC");
+
+        }
+
         public static SanPham ChiTiet(String id)
         {
             var sql = new MobileShopConnectionDB();
