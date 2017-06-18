@@ -3,14 +3,17 @@
         <div class="col-md-4">
             <div id="logo"><img src="~/css/images/logo3.png" /></div>
         </div>
+            @using (Html.BeginForm("Index", "Search", FormMethod.Get))
+            {
         <div class="col-md-4">
-            <form class="form-search">
-                <input type="text" class="input-medium search-query">
-                <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+            <form class="form-search">  
+                    <input type="text" class="input-medium search-query" name="searchString" />
+                    <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
             </form>
         </div>
+            }
         <div class="col-md-4">
-            <div id="cart"><a class="btn btn-1" href="@Url.Action("index","GioHang")"><span class="glyphicon glyphicon-shopping-cart"></span>CART : 0 ITEM</a></div>
+            <div id="cart"><a class="btn btn-1" href="@Url.Action("index", "GioHang")"><span class="glyphicon glyphicon-shopping-cart"></span>CART : 0 ITEM</a></div>
         
         </div>
     </div>

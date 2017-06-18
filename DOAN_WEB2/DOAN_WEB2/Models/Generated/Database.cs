@@ -40,6 +40,8 @@ namespace MobileShopConnection
 		}
 		
 		public static IFactory Factory { get; set; }
+        public IQueryable<SanPham> SanPhams { get; internal set; }
+
         public static MobileShopConnectionDB GetInstance()
         {
 			if (_instance!=null)

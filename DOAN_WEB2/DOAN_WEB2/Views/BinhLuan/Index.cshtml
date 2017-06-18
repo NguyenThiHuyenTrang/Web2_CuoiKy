@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<MobileShopConnection.BinhLuan>
-@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = null;
@@ -30,11 +29,4 @@ else
             <div class="comment-conten">@item.NoiDung</div>
         </div>
     }
-
-    @*<div class="row text-center">
-        <ul class="pagination">
-            @Html.PagedListPager(Model, PagedList => Url.Action("Index", new { PagedList }))
-        </ul>
-    </div>*@
-
 </div>
