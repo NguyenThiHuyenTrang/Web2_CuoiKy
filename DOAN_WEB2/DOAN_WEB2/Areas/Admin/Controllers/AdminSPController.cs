@@ -62,7 +62,7 @@ namespace DOAN_WEB2.Areas.Admin.Controllers
                     string fileName = Guid.NewGuid().ToString();
                     string fullPathWithFileName = "/css/images/" + fileName + ".jpg";
                     hpf.SaveAs(Server.MapPath(fullPathWithFileName));
-                    sp.Hinh1 = fullPathWithFileName;
+                    sp.Hinh1 = fileName + ".jpg";
                 }
             }
           
@@ -73,27 +73,6 @@ namespace DOAN_WEB2.Areas.Admin.Controllers
             //{
             //    return View();
     
-
-
-    //if (Request.Files.Count > 0)
-    //{
-    //    var hpf = Request.Files[0];
-    //    if (hpf.ContentLength > 0)
-    //    {
-    //        string fileName = sp.HinhChinh;
-    //        string fullPathWithFileName = "/css/images/" + fileName + ".jpg";
-    //        hpf.SaveAs(Server.MapPath(fullPathWithFileName));
-    //        sp.HinhChinh = sp.HinhChinh + ".jpg";
-    //    }
-    //}
-
-    //sp.TinhTrang = 0;
-    //MobileShopBus.ThemSP(sp);
-    //return RedirectToAction("Index");
-   
-
-
-        
 
         // GET: Admin/AdminSP/Edit/5
         public ActionResult Edit(string id)

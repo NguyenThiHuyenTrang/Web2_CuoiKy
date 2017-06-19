@@ -40,7 +40,7 @@
     <h3>Thêm  Sản Phẩm </h3>
 
     <div>
-        @using (Html.BeginForm("Create", "AdminSP", FormMethod.Post))
+        @using (Html.BeginForm("Create", "AdminSP", FormMethod.Post, new { @enctype = "multipart/form-data"}))
         {
 
 
