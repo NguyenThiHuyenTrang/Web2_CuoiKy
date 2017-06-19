@@ -17,7 +17,7 @@ namespace DOAN_WEB2.Models.BUS
                 {
                     //update so luong
                     int a = (int)x.ElementAt(0).SoLuong + soluong;
-                    CapNhat(masanpham, mataikhoan, a, gia,tensanpham);
+                    CapNhat(masanpham, mataikhoan, gia,a,tensanpham);
                 }
                 else
                 {

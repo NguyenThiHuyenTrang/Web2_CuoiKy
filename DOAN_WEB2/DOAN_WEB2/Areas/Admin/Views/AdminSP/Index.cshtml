@@ -60,9 +60,8 @@
                 <td>@item.MaNhaSX</td>
                 <td>@item.Gia</td>
                 <td>@item.HeDieuHanh</td>
-
                 <td>
-                    <img src="~/css/images/@item.HinhChinh" style="width:70px;height:90px;" />
+                    <img src="~/css/images/@item.Hinh1" style="width:70px;  height:90px;" />
                 </td>
                 <td>@item.ManHinh</td>
                 <td>@item.RAM</td>
@@ -71,8 +70,10 @@
                 <td>@item.MaLoaiSP</td>
                 <td>@item.BoNhoTrong</td>
                 <td>@item.TinhTrang</td>
-                <td><a href="@Url.Action("Edit","AdminSP",new {id =@item.MaSP })"> <img src="~/css/images/edit.png" /></a></td>
-                <td><a href="@Url.Action("Remove","AdminSP",new {id =@item.MaSP})"><img src="~/css/images/delete.png" /></a></td>
+
+                
+                <td><a href="@Url.Action("Edit","AdminSP",new {Area="Admin", id =@item.MaSP })"> <img src="~/css/images/edit.png" /></a></td>
+                <td><a href="@Url.Action("Delete","AdminSP",new {Area="Admin",id =@item.MaSP})"><img src="~/css/images/delete.png" /></a></td>
 
             </tr>
         }

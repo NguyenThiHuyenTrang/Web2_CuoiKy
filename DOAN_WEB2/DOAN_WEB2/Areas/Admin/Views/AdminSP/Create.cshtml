@@ -1,9 +1,9 @@
-﻿
-@model MobileShopConnection.SanPham
+﻿@model MobileShopConnection.SanPham
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Areas/Admin/Views/Shared/_MainPlayoutAdmin.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_MainPLayoutAdmin.cshtml";
 }
+<script src="~/Areas/AssetAdmin/js/sanpham/previewFile.js"></script>
 <style>
     input[type=text], select {
         width: 100%;
@@ -35,18 +35,27 @@
         background-color: #808080;
     }
 </style>
-
-
 <body>
+
     <h3>Thêm  Sản Phẩm </h3>
+
     <div>
         @using (Html.BeginForm("Create", "AdminSP", FormMethod.Post))
         {
+
+
             <label for="fname">Mã Sản Phẩm</label>
             <input type="text" id="fname" name="MaSP" placeholder="Nhập mã sản phẩm ..." required>
 
             <label for="lname">Tên Sản Phẩm </label>
             <input type="text" id="lname" name="TenSP" placeholder="Nhập tên sản phẩm ..." required>
+
+            <label for="fname">Mã Loại Sản Phẩm</label>
+            <input type="text" id="fname" name="MaLoaiSP" placeholder="Nhập mã loại sản phẩm ..." required>
+
+            <label for="fname">Mã nhà sản xuất</label>
+            <input type="text" id="fname" name="MaNhaSX" placeholder="Nhập mã nhà sản xuất.." required>
+
             <div class="form-group">
                 @Html.LabelFor(model => model.MoTa, "Mô tả", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -54,33 +63,48 @@
                     @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <label for="fname">Mã Loại Sản Phẩm</label>
-            <input type="text" id="fname" name="MaLoaiSP" placeholder="Nhập mã loại sản phẩm ..." required>
 
-            <label for="fname">Mã nhà sản xuất</label>
-            <input type="text" id="fname" name="MaNhaSX" placeholder="Nhập mã nhà sản xuất ..." required>
-
-            <label for="fname">CammeraTruoc</label>
-            <input type="text" id="fname" name="CameraTruoc" placeholder="Nhập thông tin camera trước ..." required>
-            <label for="fname">CammeraSau</label>
-            <input type="text" id="fname" name="CameraSau" placeholder="Nhập thông tin camera sau ..." required>
-            <label for="fname">Giá </label>
+            <label for="fname">Giá Sản Phẩm</label>
             <input type="text" id="fname" name="Gia" placeholder="Nhập giá sản phẩm ...">
 
+            <label for="fname">Hệ điều hành</label>
+            <input type="text" id="fname" name="HeDieuHanh" placeholder="Hệ điều hành ..." required>
+
             <div class="form-group">
-                @Html.LabelFor(model => model.HinhChinh, "Hình ảnh", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.HinhChinh, "Hình ảnh chính", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div>
                     <input type="file" name="imagefile" />
                     @Html.ValidationMessageFor(model => model.HinhChinh, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <label for="country">TinhTrang</label>
-                <select id="country" name=1 required>
-                    <option value="0" selected>0</option>
-                    <option value="1">1</option>
-                </select>
-                <input type="submit" value="Submit">
+
+            <label for="fname">Màn Hình</label>
+            <input type="text" id="fname" name="ManHinh" placeholder="Màn hình ..." required>
+
+            <label for="fname">Ram</label>
+            <input type="text" id="fname" name="Ram" placeholder="Ram ..." required>
+
+            <label for="fname">Cammera Trước</label>
+            <input type="text" id="fname" name="CameraTruoc" placeholder="Camera trước ..." required>
+
+            <label for="fname">Cammera Sau</label>
+            <input type="text" id="fname" name="CameraSau" placeholder="Camerasau ..." required>
+
+            <label for="fname">Bộ Nhớ Trong</label>
+            <input type="text" id="fname" name="BoNhoTrong" placeholder="Bộ nhớ trong ..." required>
+
+
+            <label for="country">Tinh Trạng</label>
+            <select id="country" name="TinhTrang" required>
+                <option value="0" selected>Chưa Khóa</option>
+                <option value="1">Đã Khóa</option>
+            </select>
+
+            <input type="submit" value="Submit">
         }
+
     </div>
 
 </body>
+
+

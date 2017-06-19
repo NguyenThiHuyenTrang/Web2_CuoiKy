@@ -1,9 +1,10 @@
-﻿using MobileShopConnection;
+﻿using DOAN_WEB2.Models.BUS;
+using MobileShopConnection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using System.Web.Mvc;
 namespace DOAN_WEB2.Models.BUS
 {
     public class PhanLoaiBus
